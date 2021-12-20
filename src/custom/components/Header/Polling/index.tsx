@@ -6,7 +6,7 @@ export * from './PollingMod'
 const Wrapper = styled.div`
   ${StyledPolling} {
     color: ${({ theme }) => theme.footerColor};
-    opacity: 0.3;
+    opacity: 0.65;
 
     &:hover {
       opacity: 1;
