@@ -124,13 +124,13 @@ function SettingsButton({ toggleSettings, expertMode }: SettingsButtonProps) {
     <StyledMenuButton onClick={toggleSettings} id="open-settings-dialog-button">
       <b>Settings</b>
       <StyledMenuIcon />
-      {expertMode ? (
+      {/* {expertMode ? (
         <EmojiWrapper>
           <span role="img" aria-label="Expert Mode Turned On">
             🥋
           </span>
         </EmojiWrapper>
-      ) : null}
+      ) : null} */}
     </StyledMenuButton>
   )
 }

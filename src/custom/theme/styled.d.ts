@@ -69,7 +69,7 @@ declare module 'styled-components' {
       background?: FlattenSimpleInterpolation
     }
     appBody: {
-      boxShadow: string
+      boxShadow?: string
       borderRadius: string
       border: string
       padding: string
@@ -79,14 +79,14 @@ declare module 'styled-components' {
       }
     }
     neumorphism: {
-      boxShadow: FlattenSimpleInterpolation
+      boxShadow?: FlattenSimpleInterpolation
     }
     card: {
       background: FlattenSimpleInterpolation
-      background2: string
+      background2: FlattenSimpleInterpolation
       background3: FlattenSimpleInterpolation
       border: string
-      boxShadow: FlattenSimpleInterpolation
+      boxShadow?: FlattenSimpleInterpolation
     }
     header: {
       border: string

@@ -143,7 +143,7 @@ export const InfoCard = styled.div`
   flex-flow: row wrap;
   justify-content: space-between;
   margin: 0 24px 24px;
-  border-radius: 16px;
+  border-radius: 8px;
   padding: 24px;
   ${({ theme }) => theme.card.background3};
 
@@ -244,7 +244,7 @@ export const LowerSection = styled.div`
 `
 
 const NetworkCardUni = styled(YellowCard)`
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 8px 12px;
 
   ${({ theme }) => theme.mediaWidth.upToSmall`

@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   line-height: 1.4;
   right: 16px;
   bottom: 50px;
-  border-radius: 16px;
+  border-radius: 8px;
   left: initial;
   flex-flow: column wrap;
 

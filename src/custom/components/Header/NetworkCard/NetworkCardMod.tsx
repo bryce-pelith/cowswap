@@ -175,7 +175,7 @@ const ButtonMenuItem = styled.button<{ $disabled?: boolean; $selected?: boolean 
 export const NetworkInfo = styled.button<{ chainId: SupportedChainId }>`
   align-items: center;
   background-color: ${({ theme }) => theme.bg4};
-  border-radius: 12px;
+  border-radius: 8px;
   border: 1px solid ${({ theme }) => theme.bg0};
   color: ${({ theme }) => theme.text1};
   display: flex;

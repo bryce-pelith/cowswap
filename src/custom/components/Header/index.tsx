@@ -241,9 +241,9 @@ export default function Header() {
                 <SVG src={TwitterImage} description="Follow CowSwap on Twitter!" />
               </ExternalLink>
             </TwitterLink>
-            <StyledMenuButton onClick={() => toggleDarkMode()}>
+            {/* <StyledMenuButton onClick={() => toggleDarkMode()}>
               {darkMode ? <Moon size={20} /> : <Sun size={20} />}
-            </StyledMenuButton>
+            </StyledMenuButton> */}
           </HeaderElementWrap>
           <Menu darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         </HeaderControls>

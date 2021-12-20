@@ -6,11 +6,12 @@ import { createGlobalStyle, css } from 'styled-components/macro'
 
 import { transparentize } from 'polished'
 import { cowSwapBackground, cowSwapLogo } from 'theme/cowSwapAssets'
+import { hakkaBackground, hakkaLogo } from 'theme/hakkaAssets'
 
-import Cursor1 from 'assets/cow-swap/cursor1.gif'
-import Cursor2 from 'assets/cow-swap/cursor2.gif'
-import Cursor3 from 'assets/cow-swap/cursor3.gif'
-import Cursor4 from 'assets/cow-swap/cursor4.gif'
+// import Cursor1 from 'assets/cow-swap/cursor1.gif'
+// import Cursor2 from 'assets/cow-swap/cursor2.gif'
+// import Cursor3 from 'assets/cow-swap/cursor3.gif'
+// import Cursor4 from 'assets/cow-swap/cursor4.gif'
 
 // Modal override items
 import { HeaderText } from '@src/components/WalletModal/Option'
@@ -30,10 +31,10 @@ export function colors(darkMode: boolean): Colors {
     black: darkMode ? '#021E34' : '#000000',
 
     // ****** text ******
-    text1: darkMode ? '#c5daef' : '#000000',
-    text2: darkMode ? '#021E34' : '#000000',
-    text3: darkMode ? 'rgba(197, 218, 239, 0.4)' : '#000000',
-    text4: darkMode ? 'rgba(197, 218, 239, 0.7)' : '#000000b8',
+    text1: '#ffffff',
+    text2: '#57cfc1',
+    text3: '#000000',
+    text4: 'rgba(197, 218, 239, 0.7)',
 
     // ****** backgrounds / greys ******
     bg1: darkMode ? '#163861' : '#D5E9F0',
@@ -48,10 +49,11 @@ export function colors(darkMode: boolean): Colors {
     advancedBG: darkMode ? '#163861' : '#d5e8f0',
 
     // ****** primary colors ******
-    primary1: darkMode ? '#D67B5A' : '#FF784A',
-    primary3: darkMode ? '#D67B5A' : '#FF784A',
-    primary4: darkMode ? '#ff5d25' : '#ff5d25',
-    primary5: darkMode ? '#D67B5A' : '#FF784A',
+    primary1: '#28b0ac',
+    primary2: '#57cfc1',
+    primary3: '#dffbf0',
+    primary4: '#1d9097',
+    primary5: '#164b5a',
 
     // ****** color text ******
     primaryText1: darkMode ? '#021E34' : '#000000',
@@ -69,8 +71,8 @@ export function colors(darkMode: boolean): Colors {
     blueShade2: '#011e34',
 
     // states
-    success: darkMode ? '#00d897' : '#00815a',
-    danger: '#f1356e',
+    success: '#64fa96',
+    danger: '#f25b3d',
     pending: '#43758C',
     attention: '#ff5722',
 
@@ -106,46 +108,25 @@ export function themeVariables(darkMode: boolean, colorsTheme: Colors) {
     body: {
       background: css`
         background: rgba(164, 211, 227, 1);
-        background: url(data:image/svg+xml;base64,${cowSwapBackground(darkMode)}) no-repeat 100% / cover fixed,
-          ${darkMode
-            ? 'linear-gradient(180deg,rgba(20, 45, 78, 1) 10%, rgba(22, 58, 100, 1) 30%)'
-            : 'linear-gradient(180deg,rgba(164, 211, 227, 1) 5%, rgba(255, 255, 255, 1) 40%)'};
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+          url(${hakkaBackground}) no-repeat 100% / cover fixed;
         background-attachment: fixed;
         backdrop-filter: blur(40px);
       `,
     },
     logo: {
-      src: `data:image/svg+xml;base64,${cowSwapLogo(darkMode)}`,
-      srcIcon: `data:image/svg+xml;base64,${cowSwapLogo(darkMode, true)}`,
-      alt: 'CowSwap Logo',
+      src: `data:image/svg+xml;base64,${hakkaLogo(darkMode)}`,
+      srcIcon: `data:image/svg+xml;base64,${hakkaLogo(darkMode, true)}`,
+      alt: 'Hakka Finance',
       width: '208px',
       height: '50px',
     },
     util: {
       invertImageForDarkMode: darkMode ? 'filter: invert(1) grayscale(1);' : null,
     },
-    cursor: css`
-      cursor: url(${Cursor1}), auto;
-      animation: cursor 1s infinite;
-      @keyframes cursor {
-        0% {
-          cursor: url(${Cursor1}), auto;
-        }
-        25% {
-          cursor: url(${Cursor2}), auto;
-        }
-        50% {
-          cursor: url(${Cursor3}), auto;
-        }
-        75% {
-          cursor: url(${Cursor4}), auto;
-        }
-      }
-    `,
     appBody: {
-      boxShadow: `4px 4px 0px ${colorsTheme.black}`,
-      borderRadius: '16px',
-      border: `3px solid ${colorsTheme.black}`,
+      borderRadius: '8px',
+      border: `1px solid ${colorsTheme.primary2}`,
       padding: '12px 6px',
       maxWidth: {
         normal: '460px',
@@ -160,9 +141,11 @@ export function themeVariables(darkMode: boolean, colorsTheme: Colors) {
     },
     card: {
       background: css`
-        background: linear-gradient(145deg, ${colorsTheme.bg3}, ${colorsTheme.bg4});
+        background: linear-gradient(135deg, #28b0ac 33%, #f3d14a 100%);
       `,
-      background2: darkMode ? '#01182a' : colorsTheme.bg3,
+      background2: css`
+        background: linear-gradient(174deg, #3d4f4e 8%, #95aeab 92%);
+      `,
       background3: css`
         background: ${darkMode ? '#0f2644' : '#ffffff'};
       `,
@@ -215,9 +198,8 @@ export function themeVariables(darkMode: boolean, colorsTheme: Colors) {
         color: ${colorsTheme.black};
       `,
       fontWeight: '800',
-      border: `4px solid ${colorsTheme.black}`,
-      borderRadius: '16px',
-      boxShadow: `4px 4px 0px ${colorsTheme.black}`,
+      border: `1px solid ${colorsTheme.primary2}`,
+      borderRadius: '6px',
     },
     buttonOutlined: {
       background: css`
@@ -226,23 +208,21 @@ export function themeVariables(darkMode: boolean, colorsTheme: Colors) {
       `,
       fontWeight: '800',
       border: `4px solid ${colorsTheme.black}`,
-      borderRadius: '16px',
-      boxShadow: `4px 4px 0px ${colorsTheme.black}`,
+      borderRadius: '6px',
     },
     buttonLight: {
       backgroundHover: colorsTheme.primary4,
       fontWeight: '800',
       border: `4px solid ${colorsTheme.black}`,
-      boxShadow: `4px 4px 0px ${colorsTheme.black}`,
     },
     currencyInput: {
-      background: `${darkMode ? colorsTheme.blueShade : colorsTheme.white}`,
+      background: 'linear-gradient(178deg, rgba(61,79,78,0.6) 2%, rgba(98,121,120,0.6) 99%);',
       color: colorsTheme.text1,
-      border: `2px solid ${darkMode ? colorsTheme.blueShade2 : colorsTheme.disabled}`,
+      border: `1px solid ${darkMode ? colorsTheme.blueShade2 : colorsTheme.disabled}`,
     },
     buttonCurrencySelect: {
-      background: colorsTheme.bg1,
-      border: `2px solid ${colorsTheme.black}`,
+      background: colorsTheme.primary3,
+      border: `2px solid ${colorsTheme.primary3}`,
       boxShadow: `2px 2px 0px ${colorsTheme.black}`,
       color: darkMode ? colorsTheme.text2 : colorsTheme.text1,
       colorSelected: darkMode ? colorsTheme.white : colorsTheme.text1,
@@ -250,14 +230,14 @@ export function themeVariables(darkMode: boolean, colorsTheme: Colors) {
     bgLinearGradient: css`
       background-image: linear-gradient(270deg, ${colorsTheme.purple} 30%, ${colorsTheme.blue1} 70%);
     `,
-    footerColor: darkMode ? colorsTheme.text1 : colorsTheme.greenShade,
+    footerColor: '#3EBD93',
     networkCard: {
       background: 'rgb(255 120 74 / 60%)',
       text: colorsTheme.black,
     },
     wallet: {
       color: darkMode ? colorsTheme.text2 : colorsTheme.text1,
-      background: darkMode ? colorsTheme.white : colorsTheme.bg2,
+      background: darkMode ? colorsTheme.white : colorsTheme.primary2,
     },
   }
 }

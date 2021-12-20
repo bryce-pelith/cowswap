@@ -32,7 +32,7 @@ export const Wrapper = styled.div`
 
   ${Web3StatusConnected} {
     color: ${({ theme }) => theme.wallet?.color};
-    background: ${({ theme }) => theme.wallet?.background};
+    background: ${({ theme }) => theme.primary2};
     height: 38px;
     border: 1px solid transparent;
     box-shadow: none;

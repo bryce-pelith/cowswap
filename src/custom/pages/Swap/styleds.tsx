@@ -14,6 +14,5 @@ export const StyledInfo = styled(Info)`
 
 export const StyledAppBody = styled(AppBody)`
   border: ${({ theme }) => theme.appBody.border};
-  box-shadow: ${({ theme }) => theme.appBody.boxShadow};
-  background: ${({ theme }) => theme.bg1};
+  background: ${({ theme }) => theme.card.background};
 `

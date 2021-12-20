@@ -49,9 +49,8 @@ const FixedContainer = styled.div`
 `
 
 export const Container = styled.div<{ hideInput: boolean; showAux?: boolean }>`
-  border-radius: ${({ hideInput, showAux = false }) => (showAux ? '20px 20px 0 0' : hideInput ? '16px' : '20px')};
+  border-radius: ${({ hideInput, showAux = false }) => (showAux ? '8px 8px 0 0' : hideInput ? '8px' : '8px')};
   border: 1px solid ${({ theme, hideInput }) => (hideInput ? ' transparent' : theme.bg2)};
-  background-color: ${({ theme }) => theme.bg1};
   width: ${({ hideInput }) => (hideInput ? '100%' : 'initial')};
   :focus,
   :hover {
@@ -66,7 +65,7 @@ export const CurrencySelect = styled(ButtonGray)<{ visible: boolean; selected: b
   font-weight: 500;
   background-color: ${({ selected, theme }) => (selected ? theme.bg1 : theme.primary1)};
   color: ${({ selected, theme }) => (selected ? theme.text1 : theme.white)};
-  border-radius: 16px;
+  border-radius: 6px;
   box-shadow: ${({ selected }) => (selected ? 'none' : '0px 6px 10px rgba(0, 0, 0, 0.075)')};
   outline: none;
   cursor: pointer;

@@ -161,7 +161,7 @@ export const Wrapper = styled.div<{ selected: boolean; showLoader: boolean }>`
   }
 
   ${Container} {
-    background: ${({ theme }) => (theme.currencyInput?.background ? theme.currencyInput?.background : theme.bg1)};
+    background-image: ${({ theme }) => (theme.currencyInput?.background ? theme.currencyInput?.background : 'none')};
     border: ${({ theme }) =>
       theme.currencyInput?.border ? theme.currencyInput?.border : `border: 1px solid ${theme.bg2}`};
 
@@ -172,11 +172,11 @@ export const Wrapper = styled.div<{ selected: boolean; showLoader: boolean }>`
   }
 
   ${AuxInformationContainer} {
-    background-color: ${({ theme }) => darken(0.0, theme.bg1 || theme.bg3)};
+    background-color: ${({ theme }) => darken(0.0, theme.bg3)};
     border-top: none;
 
     &:hover {
-      background-color: ${({ theme }) => darken(0.0, theme.bg1 || theme.bg3)};
+      background-color: ${({ theme }) => darken(0.0, theme.bg3)};
       border-top: none;
     }
   }

@@ -281,7 +281,7 @@ export function Menu({ darkMode, toggleDarkMode }: MenuProps) {
           Cow Runner
         </InternalMenuItem>
 
-        <MenuItemResponsive onClick={() => toggleDarkMode()}>
+        {/* <MenuItemResponsive onClick={() => toggleDarkMode()}>
           {darkMode ? (
             <>
               <Moon size={20} /> Dark Theme
@@ -292,7 +292,7 @@ export function Menu({ darkMode, toggleDarkMode }: MenuProps) {
               Light Theme
             </>
           )}
-        </MenuItemResponsive>
+        </MenuItemResponsive> */}
 
         <Separator />
 

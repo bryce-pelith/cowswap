@@ -40,7 +40,7 @@ const Web3StatusGeneric = styled(ButtonSecondary)`
   width: 100%;
   align-items: center;
   padding: 0.5rem;
-  border-radius: 12px;
+  border-radius: 8px;
   cursor: pointer;
   user-select: none;
   :focus {
@@ -59,7 +59,7 @@ const Web3StatusError = styled(Web3StatusGeneric)`
 `
 
 const Web3StatusConnect = styled(Web3StatusGeneric)<{ faded?: boolean }>`
-  background-color: ${({ theme }) => theme.primary4};
+  background-color: ${({ theme }) => theme.primary2};
   border: none;
 
   color: ${({ theme }) => theme.primaryText1};
@@ -74,8 +74,8 @@ const Web3StatusConnect = styled(Web3StatusGeneric)<{ faded?: boolean }>`
   ${({ faded }) =>
     faded &&
     css`
-      background-color: ${({ theme }) => theme.primary5};
-      border: 1px solid ${({ theme }) => theme.primary5};
+      background-color: ${({ theme }) => theme.primary2};
+      border: 1px solid ${({ theme }) => theme.primary3};
       color: ${({ theme }) => theme.primaryText1};
 
       :hover,

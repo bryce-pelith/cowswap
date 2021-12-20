@@ -287,8 +287,8 @@ export const StatusLabel = styled.div<{
         background-image: linear-gradient(
           90deg,
           rgba(255, 255, 255, 0) 0,
-          ${transparentize(0.3, theme.card.background2)} 20%,
-          ${theme.card.background2} 60%,
+          ${transparentize(0.3, theme.bg2)} 20%,
+          ${theme.bg2} 60%,
           rgba(255, 255, 255, 0)
         );
         animation: shimmer 2s infinite;

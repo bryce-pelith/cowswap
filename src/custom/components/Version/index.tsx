@@ -9,7 +9,7 @@ import { CODE_LINK, GP_VAULT_RELAYER, GP_SETTLEMENT_CONTRACT_ADDRESS } from 'con
 import { DEFAULT_NETWORK_FOR_LISTS } from 'constants/lists'
 import { useActiveWeb3React } from 'hooks/web3'
 
-import github from 'assets/external/github-logo.png'
+import github from 'assets/external/github-logo.svg'
 import etherscan from 'assets/external/etherscan-logo.svg'
 
 function _getContractsUrls(chainId: ChainId, contractAddressMap: typeof GP_SETTLEMENT_CONTRACT_ADDRESS) {
@@ -63,7 +63,7 @@ const StyledPolling = styled.div`
   padding: 16px;
   transition: opacity 0.25s ease;
   color: ${({ theme }) => theme.footerColor};
-  opacity: 0.5;
+  opacity: 0.65;
 
   ${({ theme }) => theme.mediaWidth.upToSmall`
     opacity: 1;
