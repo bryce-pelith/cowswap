@@ -219,6 +219,7 @@ export default function Header() {
             </UniIcon>
           </Title>
           <HeaderLinks>
+            <StyledNavLink to="/assets">Assets</StyledNavLink>
             <StyledNavLink to="/swap">Swap</StyledNavLink>
             <StyledNavLink to="/profile">Profile</StyledNavLink>
           </HeaderLinks>

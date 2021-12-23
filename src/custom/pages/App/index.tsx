@@ -2,6 +2,7 @@ import AppMod from './AppMod'
 import styled from 'styled-components/macro'
 import { RedirectPathToSwapOnly, RedirectToSwap } from 'pages/Swap/redirects'
 import { Route, Switch } from 'react-router-dom'
+import AssetsDashboard from 'pages/AssetsDashboard'
 import Swap from 'pages/Swap'
 import PrivacyPolicy from 'pages/PrivacyPolicy'
 import CookiePolicy from 'pages/CookiePolicy'
@@ -67,6 +68,7 @@ export default function App() {
   return (
     <Wrapper>
       <Switch>
+        <Route exact strict path="/assets" component={AssetsDashboard} />
         <Route exact strict path="/swap" component={Swap} />
         <Route exact strict path="/swap/:outputCurrency" component={RedirectToSwap} />
         <Route exact strict path="/send" component={RedirectPathToSwapOnly} />
