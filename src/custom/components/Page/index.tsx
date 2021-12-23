@@ -26,10 +26,6 @@ export const Content = styled.div`
     margin: 24px 0 16px;
   }
 
-  > h2 > b {
-    color: ${({ theme }) => theme.primary1};
-  }
-
   > h3 {
     font-size: 18px;
     margin: 24px 0;
