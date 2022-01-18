@@ -18,14 +18,15 @@ const App = () => {
   const [connected, setConnected] = useState(false)
   const [walletAddress, setWalletAddress] = useState('')
   const [balance, setBalance] = useState<{ [key: string]: number }>({})
+
   // pie chart
-  const [activeIndex, setActiveIndex] = useState(0)
-  const onPieEnter = useCallback(
-    (_, index) => {
-      setActiveIndex(index)
-    },
-    [setActiveIndex]
-  )
+  // const [activeIndex, setActiveIndex] = useState(0)
+  // const onPieEnter = useCallback(
+  //   (_, index) => {
+  //     setActiveIndex(index)
+  //   },
+  //   [setActiveIndex]
+  // )
 
   const rate = useMemo(() => {
     // fetch token price
@@ -116,22 +117,20 @@ const App = () => {
             ))}
       </div>
       {connected && <div className="py-4">Total Assets: {totalValue.toFixed(2)} HAKKA</div>}
-      {connected && !!chartValue.length && (
-        <PieChart width={1000} height={400}>
-          <Pie
-            activeIndex={activeIndex}
-            activeShape={renderActiveShape}
-            data={chartValue}
-            cx={500}
-            cy={200}
-            innerRadius={100}
-            outerRadius={160}
-            fill="rgb(16,185,129)"
-            dataKey="value"
-            onMouseEnter={onPieEnter}
-          />
-        </PieChart>
-      )}
+      {/* <PieChart width={1000} height={400}>
+        <Pie
+          activeIndex={activeIndex}
+          activeShape={renderActiveShape}
+          data={chartValue}
+          cx={500}
+          cy={200}
+          innerRadius={100}
+          outerRadius={160}
+          fill="rgb(16,185,129)"
+          dataKey="value"
+          onMouseEnter={onPieEnter}
+        />
+      </PieChart> */}
     </>
   )
 }
