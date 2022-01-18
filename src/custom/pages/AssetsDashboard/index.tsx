@@ -1,12 +1,18 @@
 import React, { useState, useCallback, useEffect, useMemo } from 'react'
-import Web3 from 'web3'
-import { AbiItem } from 'web3-utils'
-import ERC20_ABI from 'abis/erc20.json'
-// import { TokenList } from '@uniswap/token-lists'
-import { TokenList } from './tokens'
+import { Currency } from '@uniswap/sdk-core'
+import { useActiveWeb3React } from '../../../hooks/web3'
+import { useTokenBalances, useCurrencyBalances } from '../../../state/wallet/hooks'
+import { GpEther as ExtendedEther } from 'constants/tokens'
+import CurrencyLogo from 'components/CurrencyLogo'
+import { isEmpty, formatCurrencyAmount } from 'utils/formatCurrencyAmount'
 import { PieChart, Pie, Sector } from 'recharts'
+import { TYPE, ButtonText, IconWrapper } from 'theme'
+import { Edit } from 'react-feather'
+import Row, { RowBetween, RowFixed } from 'components/Row'
+import CurrencySearchModal from '../../../components/SearchModal/CurrencySearchModal'
+import { useAllTokens } from '@src/hooks/Tokens'
 
-const web3 = new Web3(Web3.givenProvider || 'http://localhost:8545')
+const HAKKA = '0x0E29e5AbbB5FD88e28b2d355774e73BD47dE3bcd'
 
 const App = () => {
   const [connected, setConnected] = useState(false)
