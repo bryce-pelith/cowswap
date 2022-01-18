@@ -222,6 +222,9 @@ export function Menu({ darkMode, toggleDarkMode }: MenuProps) {
     <StyledMenu>
       <MenuFlyout>
         <CloseMenu onClick={close} />
+        <ResponsiveInternalMenuItem to="/assets" onClick={close}>
+          <Repeat size={14} /> Assets
+        </ResponsiveInternalMenuItem>
         <ResponsiveInternalMenuItem to="/" onClick={close}>
           <Repeat size={14} /> Swap
         </ResponsiveInternalMenuItem>
