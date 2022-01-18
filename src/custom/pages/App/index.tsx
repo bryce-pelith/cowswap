@@ -70,7 +70,7 @@ export default function App() {
       <Switch>
         <Route exact strict path="/assets" component={AssetsDashboard} />
         <Route exact strict path="/swap" component={Swap} />
-        <Route exact strict path="/swap/:outputCurrency" component={RedirectToSwap} />
+        <Route exact strict path="/swap/:inputCurrency" component={RedirectToSwap} />
         <Route exact strict path="/send" component={RedirectPathToSwapOnly} />
         <Route exact strict path="/about" component={About} />
         <Route exact strict path="/profile" component={Profile} />
