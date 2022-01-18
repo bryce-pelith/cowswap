@@ -489,6 +489,8 @@ export default function Swap({
     maxInputAmount && onUserInput(Field.INPUT, maxInputAmount.toExact())
   }, [maxInputAmount, onUserInput])
 
+  useEffect(handleMaxInput, [loadedOutputCurrency])
+
   const handleOutputSelect = useCallback(
     (outputCurrency) => onCurrencySelection(Field.OUTPUT, outputCurrency),
     [onCurrencySelection]
