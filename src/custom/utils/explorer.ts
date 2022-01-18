@@ -16,6 +16,7 @@ function _getExplorerUrlByEnvironment() {
   }
 
   return {
+    [ChainId.IGAIN]: baseUrl,
     [ChainId.MAINNET]: baseUrl,
     [ChainId.RINKEBY]: `${baseUrl}/rinkeby`,
     [ChainId.XDAI]: `${baseUrl}/xdai`,

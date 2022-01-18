@@ -69,6 +69,14 @@ export const ADDITIONAL_BASES: { [chainId: number]: { [tokenAddress: string]: To
  * Shows up in the currency select for swap and add liquidity
  */
 export const COMMON_BASES: ChainCurrencyList = {
+  [SupportedChainId.IGAIN]: [
+    // ExtendedEther.onChain(SupportedChainId.MAINNET),
+    DAI,
+    USDC,
+    USDT,
+    WBTC,
+    WETH9_EXTENDED[SupportedChainId.MAINNET],
+  ],
   [SupportedChainId.MAINNET]: [
     // ExtendedEther.onChain(SupportedChainId.MAINNET),
     DAI,

@@ -29,6 +29,11 @@ const MAJOR_UPDATED_STUB_LIST = {
 }
 
 const EMPTY_STORE = {
+  [ChainId.IGAIN]: {
+    byUrl: {},
+    activeListUrls: undefined,
+    gpUnsupportedTokens: {},
+  },
   [ChainId.MAINNET]: {
     byUrl: {},
     activeListUrls: undefined,

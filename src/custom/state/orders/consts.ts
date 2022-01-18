@@ -2,6 +2,7 @@ import { Percent } from '@uniswap/sdk-core'
 import { SupportedChainId as ChainId } from 'constants/chains'
 
 export const ContractDeploymentBlocks: Partial<Record<ChainId, number>> = {
+  [ChainId.IGAIN]: 11469934,
   [ChainId.MAINNET]: 11469934,
   [ChainId.RINKEBY]: 7724701,
   [ChainId.XDAI]: 13566914,

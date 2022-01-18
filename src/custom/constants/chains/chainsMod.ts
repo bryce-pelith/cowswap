@@ -14,6 +14,7 @@ export enum SupportedChainId {
   XDAI = 100,
   //   ARBITRUM_KOVAN = 144545313136048,
   //   ARBITRUM_ONE = 42161,
+  IGAIN = 1337,
 }
 
 export type ChainInfo = { readonly [chainId in SupportedChainId]: L1ChainInfo & { logoUrl: string } } /* & {
@@ -95,6 +96,14 @@ export const CHAIN_INFO: ChainInfo = {
     label: 'Optimistic Kovan',
     logoUrl: optimismLogoUrl,
   }, */
+  [SupportedChainId.IGAIN]: {
+    docs: 'https://docs.uniswap.org/',
+    explorer: 'https://gnosis-protocol.io/mainnet',
+    infoLink: '',
+    label: 'Ethereum-iGain-Dev',
+    // logoUrl: EthereumLogo,
+    logoUrl: EthereumLogo, // mod
+  },
 }
 
 export const NETWORK_LABELS: { [chainId in SupportedChainId | number]: string } = {
@@ -108,10 +117,12 @@ export const NETWORK_LABELS: { [chainId in SupportedChainId | number]: string } 
   [SupportedChainId.XDAI]: 'xDai', // mod
   //   [SupportedChainId.ARBITRUM_KOVAN]: 'kArbitrum',
   //   [SupportedChainId.ARBITRUM_ONE]: 'Arbitrum One',
+  [SupportedChainId.IGAIN]: 'iGain-Dev',
 }
 
 export const ALL_SUPPORTED_CHAIN_IDS: SupportedChainId[] = [
   SupportedChainId.MAINNET,
+  SupportedChainId.IGAIN,
   SupportedChainId.RINKEBY,
   SupportedChainId.XDAI,
 ]

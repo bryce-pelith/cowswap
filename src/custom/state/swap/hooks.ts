@@ -440,7 +440,7 @@ export function useDefaultsFromURLSearch(): DefaultFromUrlSearch {
     if (!chainId) return
     // This is not a great fix for setting a default token
     // but it is better and easiest considering updating default files
-    const defaultInputToken = WETH[chainId].address
+    const defaultInputToken = WETH[chainId == 1337 ? 1 : chainId].address
     const parsed = queryParametersToSwapState(parsedQs, defaultInputToken)
     const inputCurrencyId = parsed[Field.INPUT].currencyId ?? undefined
     const outputCurrencyId = parsed[Field.OUTPUT].currencyId ?? undefined
@@ -483,7 +483,7 @@ interface CurrencyWithAddress {
 export function useDetectNativeToken(input?: CurrencyWithAddress, output?: CurrencyWithAddress, chainId?: ChainId) {
   return useMemo(() => {
     const wrappedToken: Token & { logoURI: string } = Object.assign(
-      WETH[chainId || DEFAULT_NETWORK_FOR_LISTS].wrapped,
+      WETH[chainId == 1337 ? 1 : chainId || DEFAULT_NETWORK_FOR_LISTS].wrapped,
       {
         logoURI: chainId === ChainId.XDAI ? XDAI_LOGO_URI : WETH_LOGO_URI,
       }

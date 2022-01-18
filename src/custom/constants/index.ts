@@ -89,6 +89,7 @@ export const TWITTER_LINK = 'https://twitter.com/mevprotection'
 export const GAS_PRICE_UPDATE_THRESHOLD = 30 * 60 * 1000
 export const GAS_FEE_ENDPOINTS = {
   [ChainId.MAINNET]: 'https://safe-relay.gnosis.io/api/v1/gas-station/',
+  [ChainId.IGAIN]: 'https://safe-relay.gnosis.io/api/v1/gas-station/',
   // No ropsten = main
   // [ChainId.ROPSTEN]: 'https://safe-relay.gnosis.io/api/v1/gas-station/',
   [ChainId.RINKEBY]: 'https://safe-relay.rinkeby.gnosis.io/api/v1/gas-station/',

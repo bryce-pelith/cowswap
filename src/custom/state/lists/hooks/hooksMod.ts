@@ -39,6 +39,7 @@ export const EMPTY_LIST: TokenAddressMap = {
   [ChainId.RINKEBY]: {},
   [ChainId.MAINNET]: {},
   [ChainId.XDAI]: {},
+  [ChainId.IGAIN]: {},
 }
 
 const listCache: WeakMap<TokenList, TokenAddressMap> | null =
@@ -95,7 +96,7 @@ export function useAllLists(): AppState['lists'][ChainId]['byUrl'] {
   const { chainId: connectedChainId } = useActiveWeb3React()
   const chainId = supportedChainId(connectedChainId) ?? DEFAULT_NETWORK_FOR_LISTS
   // return useAppSelector<AppState, AppState['lists']['byUrl']>(state => state.lists.byUrl)
-  return useAppSelector((state) => state.lists[chainId].byUrl)
+  return useAppSelector((state) => state.lists[chainId == 1337 ? 1 : chainId].byUrl)
 }
 
 /**
@@ -157,7 +158,7 @@ export function useActiveListUrls(): string[] | undefined {
   // MOD: adds { chainId } support to the hooks
   const { chainId: connectedChainId } = useActiveWeb3React()
   const chainId = supportedChainId(connectedChainId) ?? DEFAULT_NETWORK_FOR_LISTS
-  return useAppSelector((state) => state.lists[chainId].activeListUrls)?.filter(
+  return useAppSelector((state) => state.lists[chainId == 1337 ? 1 : chainId].activeListUrls)?.filter(
     (url) => !UNSUPPORTED_LIST_URLS[chainId].includes(url)
   )
 }
@@ -224,7 +225,7 @@ export function useIsListActive(url: string): boolean {
 export function useGpUnsupportedTokens(): UnsupportedToken | null {
   const { chainId: connectedChainId } = useActiveWeb3React()
   const chainId = supportedChainId(connectedChainId) ?? DEFAULT_NETWORK_FOR_LISTS
-  return useAppSelector((state) => (chainId ? state.lists[chainId].gpUnsupportedTokens : null))
+  return useAppSelector((state) => (chainId ? state.lists[chainId == 1337 ? 1 : chainId].gpUnsupportedTokens : null))
 }
 
 export function useAddGpUnsupportedToken() {

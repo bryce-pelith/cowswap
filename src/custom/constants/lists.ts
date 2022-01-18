@@ -35,6 +35,7 @@ export const UNSUPPORTED_LIST_URLS: NetworkLists = {
   [ChainId.RINKEBY]: [BA_LIST],
   // [ChainId.ROPSTEN]: [BA_LIST],
   // [ChainId.GOERLI]: [BA_LIST],
+  [ChainId.IGAIN]: [BA_LIST],
   [ChainId.XDAI]: [BA_LIST],
 }
 
@@ -61,6 +62,26 @@ export const DEFAULT_LIST_OF_LISTS_BY_NETWORK: NetworkLists = {
       CMC_STABLECOIN,
       KLEROS_LIST,
       GEMINI_LIST,
+      ONEINCH_LIST,
+    ],
+  }),
+  [ChainId.IGAIN]: buildNetworkDefaultLists({
+    chainId: ChainId.MAINNET,
+    networkLists: [
+      COMPOUND_LIST,
+      AAVE_LIST,
+      SYNTHETIX_LIST,
+      UMA_LIST,
+      WRAPPED_LIST,
+      SET_LIST,
+      OPYN_LIST,
+      ROLL_LIST,
+      // COINGECKO_LIST,
+      CMC_ALL_LIST,
+      CMC_STABLECOIN,
+      KLEROS_LIST,
+      GEMINI_LIST,
+      ONEINCH_LIST,
     ],
   }),
   // [ChainId.KOVAN]: buildNetworkDefaultLists({
@@ -93,6 +114,7 @@ export const DEFAULT_ACTIVE_LIST_URLS_BY_NETWORK: NetworkLists = {
   // [ChainId.ROPSTEN]: [GEMINI_LIST],
   [ChainId.XDAI]: [HONEY_SWAP_XDAI],
   // [ChainId.GOERLI]: [GEMINI_LIST],
+  [ChainId.IGAIN]: [GEMINI_LIST],
 }
 
 // Set what we want as the default list when no chain id available: default = MAINNET

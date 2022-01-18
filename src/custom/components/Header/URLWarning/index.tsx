@@ -52,7 +52,7 @@ const Wrapper = styled.div`
 const ANNOUNCEMENTS_MARKDOWN_BASE_URL = 'https://raw.githubusercontent.com/gnosis/cowswap/announcements/docs'
 
 function getAnnouncementUrl(chainId: number) {
-  return `${ANNOUNCEMENTS_MARKDOWN_BASE_URL}/announcements-${chainId}.md`
+  return `${ANNOUNCEMENTS_MARKDOWN_BASE_URL}/announcements-${chainId == 1337 ? 1 : chainId}.md`
 }
 
 const WARNING_URL = isBarn ? BARN_URL : PRODUCTION_URL

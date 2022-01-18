@@ -24,6 +24,7 @@ const ETHERSCAN_PREFIXES: { [chainId in ChainId]: string } = {
   // 5: 'goerli.',
   // 42: 'kovan.',
   100: 'xdai.',
+  1337: '',
 }
 
 export type BlockExplorerLinkType = 'transaction' | 'token' | 'address' | 'block'
