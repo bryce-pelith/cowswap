@@ -267,19 +267,19 @@ export function Menu({ darkMode, toggleDarkMode }: MenuProps) {
           </span>
         </MenuItem>
 
-        <InternalMenuItem to="/play/mev-slicer" onClick={close}>
+        {/* <InternalMenuItem to="/play/mev-slicer" onClick={close}>
           <span role="img" aria-label="Play CowGame">
             <img src={ninjaCowImage} alt="Play Cow MEV Slicer" />
           </span>{' '}
           MEV Slicer
-        </InternalMenuItem>
+        </InternalMenuItem> */}
 
-        <InternalMenuItem to="/play/cow-runner" onClick={close}>
+        {/* <InternalMenuItem to="/play/cow-runner" onClick={close}>
           <span role="img" aria-label="Play CowGame">
             <img src={cowRunnerImage} alt="Play Cow Runner Game" />
           </span>{' '}
           Cow Runner
-        </InternalMenuItem>
+        </InternalMenuItem> */}
 
         {/* <MenuItemResponsive onClick={() => toggleDarkMode()}>
           {darkMode ? (
