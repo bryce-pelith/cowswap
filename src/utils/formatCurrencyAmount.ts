@@ -1,6 +1,18 @@
 import { Price, CurrencyAmount, Currency, Fraction } from '@uniswap/sdk-core'
 import JSBI from 'jsbi'
 
+export function isEmpty(amount: CurrencyAmount<Currency> | undefined): boolean {
+  if (!amount) {
+    return true
+  }
+
+  if (JSBI.equal(amount.quotient, JSBI.BigInt(0))) {
+    return true
+  }
+
+  return false
+}
+
 export function formatCurrencyAmount(
   amount: CurrencyAmount<Currency> | undefined,
   sigFigs: number,
