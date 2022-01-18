@@ -12,6 +12,7 @@ import { ImportList } from 'components/SearchModal/ImportList'
 
 export interface CurrencySearchModalProps {
   isOpen: boolean
+  isManage?: boolean
   onDismiss: () => void
   selectedCurrency?: Currency | null
   onCurrencySelect: (currency: Currency) => void
@@ -31,6 +32,7 @@ export enum CurrencyModalView {
 
 export default function CurrencySearchModal({
   isOpen,
+  isManage = false,
   onDismiss,
   onCurrencySelect,
   selectedCurrency,
@@ -44,7 +46,9 @@ export default function CurrencySearchModal({
   const lastOpen = useLast(isOpen)
 
   useEffect(() => {
-    if (isOpen && !lastOpen) {
+    if (isManage) {
+      setModalView(CurrencyModalView.manage)
+    } else if (isOpen && !lastOpen) {
       setModalView(CurrencyModalView.search)
     }
   }, [isOpen, lastOpen])
