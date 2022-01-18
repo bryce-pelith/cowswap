@@ -116,7 +116,7 @@ const App = () => {
               />
             ))}
       </div>
-      {connected && <div className="py-4">Total Assets: {totalValue.toFixed(2)} HAKKA</div>}
+      {/* <div className="py-4">Total Assets: {totalValue.toFixed(2)} HAKKA</div> */}
       {/* <PieChart width={1000} height={400}>
         <Pie
           activeIndex={activeIndex}
