@@ -67,6 +67,11 @@ const App = () => {
   //   [setActiveIndex]
   // )
 
+  const [modalOpen, setModalOpen] = useState(false)
+  const handleDismissSearch = useCallback(() => {
+    setModalOpen(false)
+  }, [setModalOpen])
+
   return (
     <>
       {balances
@@ -99,6 +104,29 @@ const App = () => {
           onMouseEnter={onPieEnter}
         />
       </PieChart> */}
+      <CurrencySearchModal
+        isOpen={modalOpen}
+        isManage={true}
+        onDismiss={handleDismissSearch}
+        onCurrencySelect={() => {
+          setModalOpen(true)
+        }}
+      />
+      <Row justify="center">
+        <ButtonText
+          onClick={() => {
+            setModalOpen(true)
+          }}
+          className="list-token-manage-button"
+        >
+          <RowFixed>
+            <IconWrapper size="16px" marginRight="6px">
+              <Edit />
+            </IconWrapper>
+            <TYPE.main>Manage Token Lists</TYPE.main>
+          </RowFixed>
+        </ButtonText>
+      </Row>
     </>
   )
 }
