@@ -24,8 +24,8 @@ const App = () => {
     return [ether as Currency, ...tokens]
   }, [ether, tokens])
 
-  const balances = useCurrencyBalances(account, currencies)
-  const tokenBalances = useTokenBalances(account, tokens)
+  const balances = useCurrencyBalances(account as string, currencies)
+  const tokenBalances = useTokenBalances(account as string, tokens)
 
   const [prices, setPrices] = useState<{ [key: string]: number }>({})
 
