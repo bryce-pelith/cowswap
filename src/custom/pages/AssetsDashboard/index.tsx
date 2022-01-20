@@ -37,12 +37,13 @@ const App = () => {
       })
   }, [])
   useEffect(() => {
-    if (!tokens.length) return
-    fetch(
-      `https://api.coingecko.com/api/v3/simple/token_price/ethereum?vs_currencies=twd&contract_addresses=${tokens
+    const addresses = tokens
         .filter(({ address }) => !isEmpty(tokenBalances[address]) && !prices[address])
         .map(({ address }) => address)
-        .join(',')}`
+      .join(',')
+    if (!addresses) return
+    fetch(
+      `https://api.coingecko.com/api/v3/simple/token_price/ethereum?vs_currencies=twd&contract_addresses=${addresses}`
     )
       .then((response) => response.json())
       .then((price) => {
