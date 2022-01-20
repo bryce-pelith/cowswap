@@ -47,6 +47,7 @@ const App = () => {
     )
       .then((response) => response.json())
       .then((price) => {
+        if (!Object.keys(price).length) return
         const tokenPrices: { [key: string]: number } = {}
         tokens
           .filter(({ address }) => !isEmpty(tokenBalances[address]) && !prices[address])
