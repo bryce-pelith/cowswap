@@ -30,6 +30,7 @@ const App = () => {
   const [prices, setPrices] = useState<{ [key: string]: number }>({})
 
   useEffect(() => {
+    if (prices.ETH && prices.HAKKA) return
     fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum,hakka-finance&vs_currencies=twd')
       .then((response) => response.json())
       .then((price) => {
@@ -37,6 +38,7 @@ const App = () => {
       })
   }, [])
   useEffect(() => {
+    if (!tokens.length || !prices.HAKKA) return
     const addresses = tokens
         .filter(({ address }) => !isEmpty(tokenBalances[address]) && !prices[address])
         .map(({ address }) => address)
