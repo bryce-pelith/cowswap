@@ -19,7 +19,7 @@ const App = () => {
 
   const ether = useMemo(() => chainId && ExtendedEther.onChain(chainId), [chainId])
   const allTokens = useAllTokens()
-  const tokens = useMemo(() => Object.values(allTokens), [])
+  const tokens = useMemo(() => Object.values(allTokens), [allTokens])
   const currencies = useMemo(() => {
     return [ether as Currency, ...tokens]
   }, [ether, tokens])
@@ -56,6 +56,8 @@ const App = () => {
           .map(({ address }) => (tokenPrices[address] = price[address.toLowerCase()]?.twd))
         setPrices({ ...prices, ...tokenPrices })
       })
+  }, [tokens, tokenBalances])
+
   const formatValue = (amount: CurrencyAmount<Currency>, tokenPrice: number, basePrice: number, fixed = 0): string => {
     return tokenPrice ? ((parseFloat(amount.toExact()) * tokenPrice) / basePrice).toFixed(fixed) : '-'
   }
