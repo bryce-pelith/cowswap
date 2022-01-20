@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect, useMemo } from 'react'
-import { Currency } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
 import { useActiveWeb3React } from '../../../hooks/web3'
 import { useTokenBalances, useCurrencyBalances } from '../../../state/wallet/hooks'
 import { GpEther as ExtendedEther } from 'constants/tokens'
@@ -56,7 +56,9 @@ const App = () => {
         console.log({ ...prices, ...tokenPrices })
         setPrices({ ...prices, ...tokenPrices })
       })
-  }, [tokens])
+  const formatValue = (amount: CurrencyAmount<Currency>, tokenPrice: number, basePrice: number, fixed = 0): string => {
+    return tokenPrice ? ((parseFloat(amount.toExact()) * tokenPrice) / basePrice).toFixed(fixed) : '-'
+  }
 
   // pie chart
   // const [activeIndex, setActiveIndex] = useState(0)
@@ -84,8 +86,7 @@ const App = () => {
               id={address}
               currency={amount.currency}
               balance={formatCurrencyAmount(amount, 4, address === HAKKA ? 0 : undefined)}
-              // value={''}
-              value={((parseFloat(amount.toExact()) * prices[address]) / prices.HAKKA).toFixed(0)}
+              value={formatValue(amount, prices[address], prices.HAKKA)}
             />
           )
         })}
