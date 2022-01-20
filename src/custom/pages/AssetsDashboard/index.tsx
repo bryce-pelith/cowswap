@@ -60,6 +60,12 @@ const App = () => {
     return tokenPrice ? ((parseFloat(amount.toExact()) * tokenPrice) / basePrice).toFixed(fixed) : '-'
   }
 
+  const compareValue = (lhs: CurrencyAmount<Currency> | undefined, rhs: CurrencyAmount<Currency> | undefined) => {
+    const price = (amount: any) => prices[amount.currency.address] ?? 0
+    const value = (amount: any) => parseFloat(amount.toExact()) * price(amount)
+    return value(rhs) - value(lhs)
+  }
+
   // pie chart
   // const [activeIndex, setActiveIndex] = useState(0)
   // const onPieEnter = useCallback(
@@ -78,6 +84,7 @@ const App = () => {
     <>
       {balances
         .filter((amount) => !isEmpty(amount))
+        .sort(compareValue)
         .map((amount: any) => {
           const address: string = amount.currency.address ?? 'ETH'
           return (
