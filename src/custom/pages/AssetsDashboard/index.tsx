@@ -33,13 +33,11 @@ const App = () => {
     fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum,hakka-finance&vs_currencies=twd')
       .then((response) => response.json())
       .then((price) => {
-        console.log({ ...prices, ETH: price.ethereum.twd, HAKKA: price['hakka-finance'].twd })
         setPrices({ ...prices, ETH: price.ethereum.twd, HAKKA: price['hakka-finance'].twd })
       })
   }, [])
   useEffect(() => {
     if (!tokens.length) return
-    console.log(tokens, 2266)
     fetch(
       `https://api.coingecko.com/api/v3/simple/token_price/ethereum?vs_currencies=twd&contract_addresses=${tokens
         .filter(({ address }) => !isEmpty(tokenBalances[address]) && !prices[address])
@@ -48,12 +46,10 @@ const App = () => {
     )
       .then((response) => response.json())
       .then((price) => {
-        console.log({ price })
         const tokenPrices: { [key: string]: number } = {}
         tokens
           .filter(({ address }) => !isEmpty(tokenBalances[address]) && !prices[address])
           .map(({ address }) => (tokenPrices[address] = price[address.toLowerCase()]?.twd))
-        console.log({ ...prices, ...tokenPrices })
         setPrices({ ...prices, ...tokenPrices })
       })
   const formatValue = (amount: CurrencyAmount<Currency>, tokenPrice: number, basePrice: number, fixed = 0): string => {
