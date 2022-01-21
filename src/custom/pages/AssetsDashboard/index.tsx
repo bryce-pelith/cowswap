@@ -175,7 +175,7 @@ const CurrencyRow = ({
         <div className="w-16 ml-12 flex flex-row items-center">
           {id !== HAKKA ? (
             <a
-              className="inline-block p-2 rounded-md text-white bg-teal-600 cursor-pointer hover:translate-y-6"
+              className="inline-block p-2 rounded-md text-white bg-teal-600 cursor-pointer hover:translate-y-px"
               href={`#/swap/${id}`}
             >
               <Repeat size={16} />
