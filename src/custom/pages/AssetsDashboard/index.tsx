@@ -11,6 +11,7 @@ import { Edit } from 'react-feather'
 import Row, { RowBetween, RowFixed } from 'components/Row'
 import CurrencySearchModal from '../../../components/SearchModal/CurrencySearchModal'
 import { useAllTokens } from '@src/hooks/Tokens'
+import { Repeat } from 'react-feather'
 
 const HAKKA = '0x0E29e5AbbB5FD88e28b2d355774e73BD47dE3bcd'
 
@@ -167,15 +168,27 @@ const CurrencyRow = ({
 
   return (
     <>
-      <div className="flex flex-row p-1">
-        <CurrencyLogo style={{ marginRight: '0.5rem' }} currency={currency} size={'24px'} />
-        <div className="w-64">{currency.name}</div>
-        <div className="w-24">{balance}</div>
-        <div className="w-16 text-right">{currency.symbol}</div>
-        <div className="w-16 text-right">~=</div>
-        <div className="w-64 text-right">{value} HAKKA</div>
-        <div className="w-16 text-right">
-          <a href={`#/swap/${id}`}>Sell</a>
+      <div className="flex flex-row items-center pl-6 py-4 m-1 border-2 border-teal-600 rounded-md bg-gradient-to-r from-green-800 via-emerald-600 to-teal-800 opacity-90 hover:opacity-100">
+        <CurrencyLogo currency={currency} size={'32px'} />
+        <div className="w-64 pl-4 font-semibold">{currency.name}</div>
+        <div className="w-32 text-right">
+          <div className="text-lg">{balance}</div>
+          <div className="text-xs">{currency.symbol}</div>
+        </div>
+        <div className="w-24 text-right text-lg">≈</div>
+        <div className="w-32 text-right">
+          <div className="text-lg">{value}</div>
+          <div className="text-xs">HAKKA</div>
+        </div>
+        <div className="w-16 ml-12 flex flex-row items-center">
+          {id !== HAKKA ? (
+            <a
+              className="inline-block p-2 rounded-md text-white bg-teal-600 cursor-pointer hover:translate-y-6"
+              href={`#/swap/${id}`}
+            >
+              <Repeat size={16} />
+            </a>
+          ) : null}
         </div>
       </div>
     </>
