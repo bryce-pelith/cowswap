@@ -27,8 +27,8 @@ export function colors(darkMode: boolean): Colors {
     ...colorsUniswap(darkMode),
 
     // ****** base ******
-    white: darkMode ? '#c5daef' : '#ffffff',
-    black: darkMode ? '#021E34' : '#000000',
+    white: '#c5daef',
+    black: '#021E34',
 
     // ****** text ******
     text1: '#ffffff',
