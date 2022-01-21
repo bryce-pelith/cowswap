@@ -1,4 +1,4 @@
-import { Code, HelpCircle, BookOpen, PieChart, Moon, Sun, Repeat, Star, User } from 'react-feather'
+import { Code, HelpCircle, BookOpen, PieChart, Moon, Sun, DollarSign, Repeat, Star, User } from 'react-feather'
 
 import MenuMod, {
   MenuItem,
@@ -223,7 +223,7 @@ export function Menu({ darkMode, toggleDarkMode }: MenuProps) {
       <MenuFlyout>
         <CloseMenu onClick={close} />
         <ResponsiveInternalMenuItem to="/assets" onClick={close}>
-          <Repeat size={14} /> Assets
+          <DollarSign size={14} /> Assets
         </ResponsiveInternalMenuItem>
         <ResponsiveInternalMenuItem to="/" onClick={close}>
           <Repeat size={14} /> Swap
