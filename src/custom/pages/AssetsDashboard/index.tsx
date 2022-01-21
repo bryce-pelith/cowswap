@@ -85,6 +85,21 @@ const App = () => {
 
   return (
     <>
+      <Row justify="center">
+        <ButtonText
+          onClick={() => {
+            setModalOpen(true)
+          }}
+          className="list-token-manage-button"
+        >
+          <RowFixed>
+            <IconWrapper size="16px" marginRight="6px">
+              <Edit />
+            </IconWrapper>
+            <TYPE.main>Manage Token Lists</TYPE.main>
+          </RowFixed>
+        </ButtonText>
+      </Row>
       {balances
         .filter((amount) => !isEmpty(amount))
         .sort(compareValue)
@@ -123,21 +138,6 @@ const App = () => {
           setModalOpen(true)
         }}
       />
-      <Row justify="center">
-        <ButtonText
-          onClick={() => {
-            setModalOpen(true)
-          }}
-          className="list-token-manage-button"
-        >
-          <RowFixed>
-            <IconWrapper size="16px" marginRight="6px">
-              <Edit />
-            </IconWrapper>
-            <TYPE.main>Manage Token Lists</TYPE.main>
-          </RowFixed>
-        </ButtonText>
-      </Row>
     </>
   )
 }
