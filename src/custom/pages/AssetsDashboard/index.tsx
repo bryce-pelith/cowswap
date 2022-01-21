@@ -6,12 +6,9 @@ import { GpEther as ExtendedEther } from 'constants/tokens'
 import CurrencyLogo from 'components/CurrencyLogo'
 import { isEmpty, formatCurrencyAmount } from 'utils/formatCurrencyAmount'
 import { PieChart, Pie, Sector } from 'recharts'
-import { TYPE, ButtonText, IconWrapper } from 'theme'
-import { Edit } from 'react-feather'
-import Row, { RowBetween, RowFixed } from 'components/Row'
+import { Edit, Repeat } from 'react-feather'
 import CurrencySearchModal from '../../../components/SearchModal/CurrencySearchModal'
 import { useAllTokens } from '@src/hooks/Tokens'
-import { Repeat } from 'react-feather'
 
 const HAKKA = '0x0E29e5AbbB5FD88e28b2d355774e73BD47dE3bcd'
 
@@ -85,21 +82,16 @@ const App = () => {
 
   return (
     <>
-      <Row justify="center">
-        <ButtonText
+      <div>
+        <button
           onClick={() => {
             setModalOpen(true)
           }}
           className="list-token-manage-button"
         >
-          <RowFixed>
-            <IconWrapper size="16px" marginRight="6px">
-              <Edit />
-            </IconWrapper>
-            <TYPE.main>Manage Token Lists</TYPE.main>
-          </RowFixed>
-        </ButtonText>
-      </Row>
+          <Edit /> Manage Token Lists
+        </button>
+      </div>
       {balances
         .filter((amount) => !isEmpty(amount))
         .sort(compareValue)
