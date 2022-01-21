@@ -21,6 +21,7 @@ import {
   // DAI_OPTIMISM,
   // USDT_OPTIMISM,
   // WBTC_OPTIMISM,
+  HAKKA,
 } from 'constants/tokens'
 
 import { USDC_XDAI, /* USDT_XDAI, */ WBTC_XDAI, WETH_XDAI } from 'utils/xdai/constants'
@@ -84,6 +85,7 @@ export const COMMON_BASES: ChainCurrencyList = {
     USDT,
     WBTC,
     WETH9_EXTENDED[SupportedChainId.MAINNET],
+    HAKKA,
   ],
   // [SupportedChainId.ROPSTEN]: [
   //   // ExtendedEther.onChain(SupportedChainId.ROPSTEN),

@@ -2,6 +2,13 @@ import { WETH9, Token, Ether } from '@uniswap/sdk-core'
 import { UNI_ADDRESS } from './addresses'
 import { SupportedChainId } from './chains'
 
+export const HAKKA = new Token(
+  SupportedChainId.MAINNET,
+  '0x0E29e5AbbB5FD88e28b2d355774e73BD47dE3bcd',
+  18,
+  'HAKKA',
+  'Hakka Finance'
+)
 export const AMPL = new Token(
   SupportedChainId.MAINNET,
   '0xD46bA6D942050d489DBd938a2C909A5d5039A161',
