@@ -56,7 +56,7 @@ const AppWrapper = styled.div<Partial<CSS.Properties & AppWrapProps>>`
     left: 0;
     bottom: 0;
     right: 0;
-    filter: blur(20px);
+    filter: blur(4px);
     backdrop-filter: blur(20px);
     background-image: ${({ theme }) => theme.body.background};
     opacity: 0;
@@ -101,11 +101,12 @@ const Marginer = styled.div`
 // }
 
 export default function App(props?: { children?: ReactNode }) {
-  const [bgBlur, setBgBlur] = useState(false)
+  // const [bgBlur, setBgBlur] = useState(false)
+  const bgBlur = true
   const location = useLocation()
-  useEffect(() => {
-    setBgBlur(location.pathname.length > 1 && location.pathname !== '/swap')
-  }, [location.pathname])
+  // useEffect(() => {
+  //   setBgBlur(location.pathname.length > 1 && location.pathname !== '/swap')
+  // }, [location.pathname])
   return (
     <ErrorBoundary>
       <Suspense fallback={null}>
