@@ -41,8 +41,8 @@ const App = () => {
   useEffect(() => {
     if (!tokens.length || !prices.HAKKA) return
     const addresses = tokens
-        .filter(({ address }) => !isEmpty(tokenBalances[address]) && !prices[address])
-        .map(({ address }) => address)
+      .filter(({ address }) => !isEmpty(tokenBalances[address]) && !prices[address])
+      .map(({ address }) => address)
       .join(',')
     if (!addresses) return
     fetch(
