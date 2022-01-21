@@ -63,7 +63,7 @@ const App = () => {
   }
 
   const compareValue = (lhs: CurrencyAmount<Currency> | undefined, rhs: CurrencyAmount<Currency> | undefined) => {
-    const price = (amount: any) => prices[amount.currency.address] ?? 0
+    const price = (amount: any) => prices[amount.currency.address ?? 'ETH'] ?? 0
     const value = (amount: any) => parseFloat(amount.toExact()) * price(amount)
     return value(rhs) - value(lhs)
   }
